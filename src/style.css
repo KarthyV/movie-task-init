@@ -1,0 +1,24 @@
+body {
+  background-image: linear-gradient(
+    to right,
+    #00e6ff,
+    #00d7fd,
+    #00c8f9,
+    #00b9f3,
+    #12a9eb
+  );
+}
+
+.star {
+  color: gold !important;
+}
+
+.right {
+  font-weight: 900;
+  color: black !important;
+}
+
+.card {
+  width: 400px !important;
+  max-height: 660px;
+}
