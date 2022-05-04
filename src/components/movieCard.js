@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 const MovieCard = (props) => {
+  const [show, setShow] = useState(false);
   const { name, image, description, rating } = props.movie;
 
   return (
     <div className="column">
       <div className="ui link cards">
-        <div className="card">
+        <div onClick={() => setShow(!show)} className="card">
           <div className="image">
             <img src={image} alt={name} />
           </div>
           <div className="content">
-            <div className="header">{name}</div>
-            <div className="description">
-              <em>{description}</em>
+            <div className="ui styled accordion">
+              <div className={`${show ? "active title" : "title"}`}>
+                <div className="header">{name}</div>
+
+                <i className="dropdown icon" />
+              </div>
+
+              <div className={`${show ? "active content" : "content"}`}>
+                <em>{description}</em>
+              </div>
             </div>
           </div>
           <div className="extra content">

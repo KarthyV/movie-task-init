@@ -18,7 +18,12 @@ body {
   color: black !important;
 }
 
-.card {
-  width: 400px !important;
-  max-height: 660px;
+.header {
+  font-weight: bold !important;
+  color: black !important;
+}
+
+.addMovie {
+  background-color: aliceblue;
+  margin: 20px;
 }

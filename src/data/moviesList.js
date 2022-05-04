@@ -7,28 +7,28 @@ const movieList = [
       "https://m.media-amazon.com/images/M/MV5BOGE2NWUwMDItMjA4Yi00N2Y3LWJjMzEtMDJjZTMzZTdlZGE5XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
   },
   {
-    name: "The Northman (2022)",
+    name: "The Northman",
     rating: "7.8",
     description: `From visionary director Robert Eggers comes The Northman, an action-filled epic that follows a young Viking prince on his quest to avenge his father's murder.`,
     image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/The_Northman.png/220px-The_Northman.png",
   },
   {
-    name: "Thor: Love and Thunder (2022)",
+    name: "Thor: Love and Thunder",
     rating: "7.7",
     description: `Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.`,
     image:
       "https://m.media-amazon.com/images/M/MV5BMzJjZWYzNTctODgwOS00OGNiLTg4MjktMDlmNWUxNjczMzljXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_QL75_UX190_CR0,0,190,281_.jpg",
   },
   {
-    name: " Fantastic Beasts: The Secrets of Dumbledore (2022)",
+    name: " Fantastic Beasts: The Secrets of Dumbledore ",
     rating: "6.5",
     description: `Albus Dumbledore assigns Newt and his allies with a mission related to the rising power of Grindelwald.`,
     image:
       "https://m.media-amazon.com/images/M/MV5BOTNjNWRjZDUtYjU1OC00NGFmLWE2ZDktMzhhYmIwOTU4YjVmXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg",
   },
   {
-    name: "Everything Everywhere All at Once (2022)",
+    name: "Everything Everywhere All at Once ",
     rating: "8.8",
     description: `An aging Chinese immigrant is swept up in an insane adventure, where she alone can save the world by exploring other universes connecting with the lives she could have led.`,
     image:
