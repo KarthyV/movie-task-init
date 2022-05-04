@@ -7,12 +7,12 @@ const MovieCard = (props) => {
   return (
     <div className="column">
       <div className="ui link cards">
-        <div onClick={() => setShow(!show)} className="card">
+        <div className="card">
           <div className="image">
             <img src={image} alt={name} />
           </div>
           <div className="content">
-            <div className="ui styled accordion">
+            <div onClick={() => setShow(!show)} className="ui styled accordion">
               <div className={`${show ? "active title" : "title"}`}>
                 <div className="header">{name}</div>
 
