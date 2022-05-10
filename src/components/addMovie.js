@@ -42,38 +42,37 @@ const AddMovie = (props) => {
   return (
     <div className="addMovie">
       <form action="#" onSubmit={onSubmit} className="ui form">
-        <div className="three fields">
-          <div className="field">
-            <label>Movie Name</label>
-            <input
-              name="name"
-              onChange={handleChange}
-              value={movieDetails.name}
-              type="text"
-              placeholder="Enter movie name"
-            />
-          </div>
-          <div className="field">
-            <label>Give Rating</label>
-            <input
-              name="rating"
-              onChange={handleChange}
-              value={movieDetails.rating}
-              type="text"
-              placeholder="Enter the Rating"
-            />
-          </div>
-          <div className="field">
-            <label>Poster Link</label>
-            <input
-              name="image"
-              onChange={handleChange}
-              value={movieDetails.image}
-              type="text"
-              placeholder="Paste poster link here"
-            />
-          </div>
+        <div className="field">
+          <label>Movie Name</label>
+          <input
+            name="name"
+            onChange={handleChange}
+            value={movieDetails.name}
+            type="text"
+            placeholder="Enter movie name"
+          />
         </div>
+        <div className="field">
+          <label>Give Rating</label>
+          <input
+            name="rating"
+            onChange={handleChange}
+            value={movieDetails.rating}
+            type="text"
+            placeholder="Enter the Rating"
+          />
+        </div>
+        <div className="field">
+          <label>Poster Link</label>
+          <input
+            name="image"
+            onChange={handleChange}
+            value={movieDetails.image}
+            type="text"
+            placeholder="Paste poster link here"
+          />
+        </div>
+
         <div className="field">
           <label>About Movie</label>
           <input
@@ -84,8 +83,8 @@ const AddMovie = (props) => {
             placeholder="description"
           />
         </div>
-        <button className="ui button" type="submit">
-          Add new Movie
+        <button className="ui  black button" type="submit">
+          Add Movie
         </button>
       </form>
     </div>

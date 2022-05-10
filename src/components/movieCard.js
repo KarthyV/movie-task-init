@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = (props) => {
   const [show, setShow] = useState(false);
   const { name, image, description, rating } = props.movie;
+  const navigate = useNavigate();
 
   return (
     <div className="column">
       <div className="ui link cards">
         <div className="card">
-          <div className="image">
+          <div onClick={() => navigate(`/movie/${props.id}`)} className="image">
             <img src={image} alt={name} />
           </div>
           <div className="content">
