@@ -28,9 +28,9 @@ const ColorGame = () => {
         </div>
       </form>
       <div className="ui stackable four column grid ">
-        {colorList.map((color) => {
+        {colorList.map((color, i) => {
           return (
-            <div className="column">
+            <div className="column" key={i}>
               <div className="ui segment colorcard">
                 <div
                   style={{

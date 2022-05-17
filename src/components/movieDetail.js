@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import moviesList from "../data/moviesList";
 
 const MovieDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const movie = moviesList[id];
+
+  const [movie, setMovie] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://624e6fbb77abd9e37c86ffd1.mockapi.io/movies/${id}`).then(
+      (res) => res.json().then((data) => setMovie(data))
+    );
+  }, [id]);
+
   return (
     <div>
       <div className="ui segment">
         <div className="ui embed">
-          <iframe src={movie.trailer} />
+          <iframe title={movie.name} src={movie.trailer} />
         </div>
         <div className="ui header">
           {movie.name}
@@ -21,7 +28,7 @@ const MovieDetail = () => {
         <div className="description">{movie.description}</div>
       </div>
       <button onClick={() => navigate(-1)} className="ui black button">
-        <i class="angle left icon"></i> Back
+        <i className="angle left icon"></i> Back
       </button>
     </div>
   );
