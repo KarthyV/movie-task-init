@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+impo;
 
 const AddMovie = (props) => {
+  const navigate = useNavigate();
   const [movieDetails, setMovieDetails] = useState({
     name: "",
     rating: "",
     description: "",
     image: "",
+    trailer: "",
   });
 
   function handleChange(event) {
@@ -25,7 +29,8 @@ const AddMovie = (props) => {
       !movieDetails.name ||
       !movieDetails.rating ||
       !movieDetails.description ||
-      !movieDetails.image
+      !movieDetails.image ||
+      !movieDetails.trailer
     ) {
       alert("Please enter all the required details");
     } else {
@@ -35,7 +40,9 @@ const AddMovie = (props) => {
         rating: "",
         description: "",
         image: "",
+        trailer: "",
       });
+      navigate("/");
     }
   }
 
@@ -81,6 +88,16 @@ const AddMovie = (props) => {
             value={movieDetails.description}
             type="text"
             placeholder="description"
+          />
+        </div>
+        <div className="field">
+          <label>Trailer Link</label>
+          <input
+            name="trailer"
+            onChange={handleChange}
+            value={movieDetails.trailer}
+            type="text"
+            placeholder="Trailer Link"
           />
         </div>
         <button className="ui  black button" type="submit">
