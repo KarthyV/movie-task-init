@@ -1,1 +1,1 @@
-export const API = `http://localhost:5000/movies`;
+export const API = `https://karthy-server.herokuapp.com/movies`;
