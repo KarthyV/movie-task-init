@@ -6,7 +6,8 @@ import * as yup from "yup";
 const formValidationSchema = yup.object({
   name: yup.string().required("Why not tell the Movie name? 😉"),
   rating: yup
-    .string()
+    .number()
+    .typeError("Must be a number")
     .required("Please Give a Rating 😉")
     .min(0, "Must start from 0 😄")
     .max(10, "Below 10 😅"),
@@ -26,47 +27,7 @@ const formValidationSchema = yup.object({
 
 const AddMovie = (props) => {
   const navigate = useNavigate();
-  // const [movieDetails, setMovieDetails] = useState({
-  //   name: "",
-  //   rating: "",
-  //   description: "",
-  //   image: "",
-  //   trailer: "",
-  // });
 
-  // function handleChange(event) {
-  //   const { name, value } = event.target;
-
-  //   setMovieDetails((prevDetails) => {
-  //     return {
-  //       ...prevDetails,
-  //       [name]: value,
-  //     };
-  //   });
-  // }
-
-  // function onSubmit(event) {
-  //   event.preventDefault();
-  //   if (
-  //     !movieDetails.name ||
-  //     !movieDetails.rating ||
-  //     !movieDetails.description ||
-  //     !movieDetails.image ||
-  //     !movieDetails.trailer
-  //   ) {
-  //     alert("Please enter all the required details");
-  //   } else {
-  //     props.onAdd(movieDetails);
-  //     setMovieDetails({
-  //       name: "",
-  //       rating: "",
-  //       description: "",
-  //       image: "",
-  //       trailer: "",
-  //     });
-  //     navigate("/");
-  //   }
-  // }
   const { handleSubmit, values, handleChange, handleBlur, errors, touched } =
     useFormik({
       initialValues: {
@@ -78,14 +39,15 @@ const AddMovie = (props) => {
       },
       validationSchema: formValidationSchema,
       onSubmit: (values) => {
-        console.log("Form values", values);
+        props.onAdd(values);
+        navigate("/");
       },
     });
 
   return (
     <div className="addMovie">
       <form action="#" onSubmit={handleSubmit} className="ui form">
-        <div className="field">
+        <div className={`field ${errors.name && touched.name ? "error" : ""}`}>
           <label>Movie Name</label>
           <input
             name="name"
@@ -95,9 +57,18 @@ const AddMovie = (props) => {
             placeholder="Enter movie name"
             onBlur={handleBlur}
           />
-          {errors.name && touched.name ? errors.name : ""}
+
+          {errors.name && touched.name ? (
+            <div className="ui error message">
+              <p>{errors.name}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
-        <div className="field">
+        <div
+          className={`field ${errors.rating && touched.rating ? "error" : ""}`}
+        >
           <label>Give Rating</label>
           <input
             name="rating"
@@ -107,9 +78,18 @@ const AddMovie = (props) => {
             placeholder="Enter the Rating"
             onBlur={handleBlur}
           />
-          {errors.rating && touched.rating ? errors.rating : ""}
+
+          {errors.rating && touched.rating ? (
+            <div className="ui error message">
+              <p>{errors.rating}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
-        <div className="field">
+        <div
+          className={`field ${errors.image && touched.image ? "error" : ""}`}
+        >
           <label>Poster Link</label>
           <input
             name="image"
@@ -119,10 +99,20 @@ const AddMovie = (props) => {
             placeholder="Paste poster link here"
             onBlur={handleBlur}
           />
-          {errors.image && touched.image ? errors.image : ""}
+          {errors.image && touched.image ? (
+            <div className="ui error message">
+              <p>{errors.image}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
 
-        <div className="field">
+        <div
+          className={`field ${
+            errors.description && touched.description ? "error" : ""
+          }`}
+        >
           <label>About Movie</label>
           <input
             name="description"
@@ -132,9 +122,19 @@ const AddMovie = (props) => {
             placeholder="description"
             onBlur={handleBlur}
           />
-          {errors.description && touched.description ? errors.description : ""}
+          {errors.description && touched.description ? (
+            <div className="ui error message">
+              <p>{errors.description}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
-        <div className="field">
+        <div
+          className={`field ${
+            errors.trailer && touched.trailer ? "error" : ""
+          }`}
+        >
           <label>Trailer Link</label>
           <input
             name="trailer"
@@ -144,7 +144,13 @@ const AddMovie = (props) => {
             placeholder="Trailer Link"
             onBlur={handleBlur}
           />
-          {errors.trailer && touched.trailer ? errors.trailer : ""}
+          {errors.trailer && touched.trailer ? (
+            <div className="ui error message">
+              <p>{errors.trailer}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <button className="ui  black button" type="submit">
           Add Movie

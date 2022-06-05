@@ -46,3 +46,7 @@ body {
   margin: 20px;
 }
 
+.error {
+  display: inline !important;
+  padding: 0 !important;
+}

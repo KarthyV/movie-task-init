@@ -76,11 +76,11 @@ const App = () => {
       <Routes>
         <Route path="/add" element={<AddMovie onAdd={addMovie} />} />
         <Route
-          path="/movie/edit/:id"
+          path="/movies/edit/:id"
           element={<EditMovie onSave={editMovie} />}
         />
         <Route path="/" element={<AllMovies />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
         <Route path="/colorgame" element={<ColorGame />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate replace to="/404" />} />

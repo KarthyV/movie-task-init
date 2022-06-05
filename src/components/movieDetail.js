@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { API } from "../data/api";
 
 const MovieDetail = () => {
   const navigate = useNavigate();
@@ -8,8 +9,8 @@ const MovieDetail = () => {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    fetch(`https://624e6fbb77abd9e37c86ffd1.mockapi.io/movies/${id}`).then(
-      (res) => res.json().then((data) => setMovie(data))
+    fetch(`${API}/${id}`).then((res) =>
+      res.json().then((data) => setMovie(data))
     );
   }, [id]);
 

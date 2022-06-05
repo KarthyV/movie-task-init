@@ -17,7 +17,10 @@ const MovieCard = (props) => {
     <div className="eight wide tablet five wide computer sixteen wide mobile column">
       <div className="ui link cards">
         <div className="card black">
-          <div onClick={() => navigate(`/movie/${props.id}`)} className="image">
+          <div
+            onClick={() => navigate(`/movies/${props.id}`)}
+            className="image"
+          >
             <img src={image} alt={name} />
           </div>
           <div className="content">
@@ -57,7 +60,7 @@ const MovieCard = (props) => {
             <Badge className="like">{props.delete}</Badge>
             <Badge color="primary" className="like">
               <EditIcon
-                onClick={() => navigate(`/movie/edit/${props.id}`)}
+                onClick={() => navigate(`/movies/edit/${props.id}`)}
                 color="primary"
               />
             </Badge>
